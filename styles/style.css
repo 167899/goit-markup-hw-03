@@ -18,23 +18,33 @@ body {
   font-size: var(--font-size);
   line-height: 1.17;
   letter-spacing: 0.03em;
-
-  width: 1600px;
-  margin: 0 auto;
 }
 .conteiner {
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
 }
-.list,
-.title,
-.text {
-  padding: 0;
+.section {
+  padding: 94px 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
 }
-.list {
-  list-style-type: none;
+ul {
+  list-style: none;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 /*-------------------Хедер------------*/
 .head {
@@ -61,6 +71,7 @@ body {
 }
 .list-menu .item,
 .contacts-list .item {
+  display: block;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.02em;
@@ -71,9 +82,6 @@ body {
 .list-menu {
   display: flex;
   margin-left: 93px;
-}
-.head-conteiner .lint {
-  padding: 32px 0;
 }
 .list-menu .lint {
   margin-right: 50px;
@@ -128,7 +136,7 @@ body {
   color: var(--hero-text-color);
 
   background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px 0px #00000031;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding: 10px 32px;
   border-style: none;
   border-radius: 4px;
@@ -153,9 +161,6 @@ body {
   margin: -1px;
 }
 /*---------Особенности---------*/
-.features {
-  padding: 94px 15px;
-}
 .features-list {
   display: flex;
 }
@@ -168,6 +173,7 @@ body {
 .features-list .lint-title {
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .features-list .lint-text {
   line-height: 1.71;
@@ -175,7 +181,7 @@ body {
 }
 /*----------------Направление------------*/
 .follow {
-  padding-bottom: 94px;
+  padding-top: 0;
 }
 .follow-list {
   display: flex;
@@ -197,7 +203,6 @@ body {
 }
 /*--------------Наша команда----------*/
 .our-team {
-  padding: 94px 15px;
   background-color: var(--bgc-our-team);
 }
 .our-team-list {
@@ -208,10 +213,14 @@ body {
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   text-align: center;
-  box-shadow: 0px 2px 1px 0px #00000031;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.our-team-photo {
-  margin-bottom: 30px;
+.our-team-lint:last-child {
+  margin: 0;
+}
+.our-team-text-block {
+  padding: 30px 0;
 }
 .our-team-list .lint-title {
   font-size: 16px;
@@ -223,11 +232,10 @@ body {
   font-size: 16px;
   line-height: 1.17;
   color: var(--second-text-color);
-  margin: 0 0 30px 0;
 }
 .footer {
   background-color: var(--bgc-hero-footer);
-  padding: 60px 15px;
+  padding: 60px 0;
 }
 .logo .footer-logo-studio {
   color: #fff;
@@ -265,7 +273,13 @@ body {
 .filter-list {
   display: flex;
   justify-content: center;
-  padding: 94px 0 50px 0;
+  padding-bottom: 50px;
+}
+.filter-list-lint {
+  margin-right: 8px;
+}
+.filter-list-lint:last-child {
+  margin-right: 0;
 }
 .filter-button {
   font-size: 16px;
@@ -276,14 +290,14 @@ body {
   border-style: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 8px;
   transition: all 0.3s;
 }
 .filter-button:hover,
 .filter-button:focus {
   color: var(--filter-button-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 2px 2px 0px #00000021;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /*-------Блок карточек портфолио----*/
 .portfolio-list {
@@ -292,17 +306,23 @@ body {
   margin: -15px;
 }
 .portfolio-list-lint {
-  width: 370px;
   margin: 15px;
   font-size: 0;
-  border: 1px solid #eee;
+}
+.portfolio-list-lint:hover,
+.portfolio-list-lint:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s;
 }
 .portfolio-list-link {
   text-decoration: none;
 }
-.portfolio-list-img {
-  position: relative;
-  left: -1px;
+.portfolio-list-text-block {
+  padding: 20px 24px;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 }
 .portfolio-list-titel {
   font-size: 18px;
@@ -310,11 +330,10 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--main-text-color);
-  margin: 20px 23px 4px 23px;
+  margin-bottom: 4px;
 }
 .portfolio-list-text {
   font-size: 16px;
   line-height: 1.88;
   color: var(--second-text-color);
-  margin: 0 23px 20px 23px;
 }
